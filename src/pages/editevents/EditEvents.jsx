@@ -1,1 +1,1 @@
-import styles from './EditEvents.module.css';
+import styles from './EditEvents.modules.css';

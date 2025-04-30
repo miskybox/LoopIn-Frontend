@@ -1,1 +1,1 @@
-import styles from './Suscribe.module.css';
+import styles from './Subscribe.module.css';
