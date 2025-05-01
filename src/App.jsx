@@ -1,34 +1,32 @@
-import './App.css';
-import { Route, Routes } from "react-router-dom";
-import Home from './pages/home/Home';
-import Form from './pages/form/Form';
-import LogIn from './pages/login/LogIn';
-import MyEvents from './pages/myevents/MyEvents';
+// src/App.jsx
+import React from 'react';
+import { Routes, Route, Form } from 'react-router-dom';
+import Home from './pages/home/Home'; 
 import AllEvents from './pages/allevents/AllEvents';
 import CreatedEvent from './pages/createevent/CreateEvent';
-import EditEvents from './pages/editevents/EditEvents';
+import Profile from './pages/profile/Profile';
+import LogIn from './pages/login/LogIn';
+import MyEvents from './pages/myevents/MyEvents';
 import MyTickets from './pages/mytickets/MyTickets';
-import Subscribe from './pages/subscribe/Subscribe';
-
+import SubscribeEvent from './pages/subscribeevent/SubscribeeEvent.jsx';
+import UpdateEvent from './pages/updateevent /UpdateEvent .jsx';
 function App() {
-    return (
-        <main>
-            <div></div>
-            <Routes>
-            <Route path="/" element={<Home />} />
-                <Route path="/form" element={<Form/>}/>
-                <Route path="/login" element={<LogIn/>}/>
-                <Route path="/myevents" element={<MyEvents/>}/>
-                <Route path="/allevents" element={<AllEvents/>}/>
-                <Route path="/create" element={<CreatedEvent/>}/>
-                <Route path="/edit" element={<EditEvents/>}/>
-                <Route path="/mytickets" element={<MyTickets/>}/>
-                <Route path="/subscribe" element={<Subscribe/>}/>
-            </Routes>
-        </main>
-    
-    )
-
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+        <Route path="/allevents" element={<AllEvents />} />
+        <Route path="/createevent" element={<CreatedEvent />} /> 
+        <Route path="/profile" element={<Profile />} />
+        <Route path="login" element={<LogIn />} />
+        <Route path="myevents" element={<MyEvents />} />
+        <Route path="mytickets" element={<MyTickets />} />
+        <Route path="subscribeevent" element={<SubscribeEvent />} />
+        <Route path="updateevent" element={<UpdateEvent />} />
+        </Routes>     
+    </div>
+  );
 }
 
 export default App;
+
