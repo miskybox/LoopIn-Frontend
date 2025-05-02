@@ -1,0 +1,63 @@
+.iconContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+ }
+ 
+ 
+ .iconImg {
+    color: transparent;
+    width: 48px;
+    height: 48px;
+ }
+ 
+ 
+ /* Variaciones de iconos con fondo */
+
+ .favorites {background-color: transparent;  width: 58px; height: 58px;  }
+ .google { background-color: #ED3241; width: 48px; height: 48px; }
+ .apple { background-color: #1F2024; width: 48px; height: 48px;}
+ .facebook { background-color: #006FFD; width: 48px; height: 48px; }
+ .like { background-color: white; width: 20px; height: 20px; }
+ 
+ 
+ /* Iconos */
+
+ .favorites .iconImg { color: var(--secondary); }
+ .google .iconImg { color: white; width: 20px; height: 20px; }
+ .apple .iconImg { color: white; width: 20px; height: 20px; }
+ .facebook .iconImg { color: white; width: 20px; height: 20px; }
+
+ 
+ 
+ /* Hover - Cambia color de fondo e icono */
+
+ .home:hover .iconImg { color: var(--primary); }
+ .favorites:hover .iconImg { color: var(--primary); }
+ .google:hover { background-color: darkred; }
+ .apple:hover { background-color: gray; }
+.facebook:hover { background-color: #0d5fce; }
+.like:hover .iconImg { color: red; }
+
+
+/* Active - Cambia color de fondo e icono */
+
+.home:active .iconImg { color: var(--tertiary); }
+.favorites:active .iconImg { color: var(--tertiary); }
+.google:active { background-color: crimson; }
+.apple:active { background-color: black; }
+.facebook:active { background-color: #00376b; }
+.like:active .iconImg{ color: red; }
+
+
+.iconFavorites {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+
+
+}
