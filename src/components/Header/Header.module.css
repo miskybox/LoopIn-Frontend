@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    width: 100vw;
+    max-width: 100vw;
+    height: 40px;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+    position: fixed;
+    z-index: 1000;
+    background-color: #1D0739;
+    left: 0;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+    .logo {
+        height: 120px;  
+        cursor: pointer;
+        object-fit: contain;
+        
+      }
+       
