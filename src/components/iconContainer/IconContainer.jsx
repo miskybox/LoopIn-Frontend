@@ -14,7 +14,7 @@ const icons = {
 
 
 const IconContainer = ({ variation = "google", size = 48, onClick, className="" }) => {
- const IconComponent = icons[variation] || FaBell;
+ const IconComponent = icons[variation] || FaGoogle;
 
 
  return (

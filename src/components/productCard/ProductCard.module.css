@@ -1,0 +1,75 @@
+/* tarjeta del producto, define el tamaño, bordes redondeados, sombra, y dirección de los elementos */
+.productCard {
+    width: 195px;
+    height: 195px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ 
+ /* contenedor de la imagen, define el tamaño y el color de fondo del placeholder */
+ .productImagePlaceholder {
+    object-fit: cover;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+ }
+ 
+ 
+ /* imagen, ajusta su tamaño y garantiza que cubra el área del contenedor sin distorsión */
+ .productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* contenedor de la información (nombre y rating), organiza los elementos verticalmente */
+.productInfoBox {
+   margin-top: -10px;
+   position: relative;
+   width: 100%; /* O un ancho fijo, como 200px */
+   height: 100px; /* Ajusta según necesites */
+   background-color: var(--secondary);
+   padding: 10px;
+   border-radius: 10px;
+   color: white;
+   text-align: left;
+   display: block;
+   border: 1px solid var(--secondary);
+}
+
+
+/* nombre del producto, define su tamaño, peso de la fuente y márgenes */
+.productName {
+   font-size: 11px;
+   font-weight: bold;
+   margin: 5px 0;
+}
+
+
+/* rating del producto, ajusta el tamaño de la fuente y el color de las estrellas */
+.productRating {
+   font-size: 16px;
+   color: #f39c12;
+   margin-top: 5px;
+}
+
+
+/*  valor numérico de la valoración, define el tamaño de la fuente */
+.ratingValue {
+   font-size: 10px;
+}
+
+
+.iconFavorites{
+   position: absolute;
+   top: -10px;
+   right: 18px;
+}
