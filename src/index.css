@@ -1,7 +1,13 @@
-.mainContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+main{
+    padding-top: 83px;
+    padding-bottom: 120px;
+  }
   
+  * {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: Lexie Readable;
+  }
