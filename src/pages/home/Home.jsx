@@ -1,3 +1,4 @@
+import EventCarousel from "../../components/eventCarousel/EventCarousel";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
@@ -7,7 +8,7 @@ function Home() {
     <div className={styles.pageContainer}>
       <Header />
       <main className={styles.mainContent}>
-        <h1 className={styles.title}>Home</h1>
+        <EventCarousel />
         
       </main>
       <Footer />
