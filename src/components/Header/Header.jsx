@@ -1,5 +1,6 @@
 import styles from "../Header/Header.module.css";
 import Logo from "../../assets/Logo.png";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 const Header = () => {
   const handleLogoClick = () => {
@@ -8,6 +9,7 @@ const Header = () => {
 
   return (
     <div className={styles.header}>
+      <HamburgerMenu />
       <img
         className={styles.logo}
         src={Logo}
