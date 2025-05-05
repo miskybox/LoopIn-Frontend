@@ -10,6 +10,8 @@ import MyEvents from './pages/myevents/MyEvents';
 import MyTickets from './pages/mytickets/MyTickets';
 import SubscribeEvent from './pages/subscribeevent/SubscribeeEvent.jsx';
 import UpdateEvent from './pages/updateevent /UpdateEvent .jsx';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
   return (
     <div>

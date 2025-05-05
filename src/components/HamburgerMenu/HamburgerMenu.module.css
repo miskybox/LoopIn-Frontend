@@ -1,0 +1,40 @@
+.container {
+    position: relative;
+  }
+  
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #1D0739;
+    color: white;
+    flex-direction: column;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    margin: 8px 0;
+    font-weight: bold;
+  }
+  
+  .show {
+    display: flex;
+  }
+  
