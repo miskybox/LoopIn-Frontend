@@ -17,9 +17,10 @@ function LogIn() {
       <>
       <Header />
       <main >
-        
-   
-    <EventCarousel />
+      <EventCarousel />
+      <h1 className='welcome'>
+      Bienvenide!
+   		     </h1>
     <Footer />
   </main>
   </>
