@@ -1,4 +1,4 @@
-import styles from "../imagecontainer/Imagecontainer.module.css"; 
+import styles from "../imagecontainer/ImageContainer.module.css"; 
 
 function ImageContainer({ imgPath }) {
   return (

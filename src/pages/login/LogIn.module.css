@@ -1,10 +1,69 @@
-.title {
-    font-size: 3rem;
-    color: #ff69b4; /* rosa fuerte */
-    font-weight: bold;
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    background-color: #ffffff;
+  }
+  
+ .welcome{
+  font-size: 1rem;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+  animation: pop 1.5s ease-in-out infinite alternate;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+ }
+
+.imgcont {
+display: flex;
+align-items: center;
+justify-content: center;
+
+
+}
+
+section .imgcont {
+  max-height: 30%;
+  max-width: 30%;
+}
+
+  .input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* gris claro */
+    width: 300px;
+    font-size: 1rem;
+  }
+  
+  .buttonlogin {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff69b4; /* rosa fuerte */
+    color: white; /* blanco */
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .buttonlogin:hover {
+    background-color: #ff1493; /* rosa intenso */
+  }
+
+
+h3 {
+    font-size: 1rem;
+    color: #000000;
     text-align: center;
-    animation: pop 1.5s ease-in-out infinite alternate;
-    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5);
+   
     font-family: 'Comic Sans MS', cursive, sans-serif;
   }
   
