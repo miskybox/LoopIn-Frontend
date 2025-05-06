@@ -1,5 +1,6 @@
 .container {
     position: relative;
+    width: 100%;
   }
   
   .hamburger {
@@ -7,34 +8,45 @@
     border: none;
     cursor: pointer;
     padding: 10px;
+    z-index: 20;
   }
   
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 36px;
+    height: 36px;
+    color: #C151F2;
   }
   
+  /* Menú desplegable */
   .menu {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 100%;
+    left: 0;
     right: 0;
-    background: #1D0739;
-    color: white;
+    background-color: #1D0739;
     flex-direction: column;
-    padding: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  .show {
+    display: flex;
   }
   
   .menu a {
     color: white;
     text-decoration: none;
-    margin: 8px 0;
-    font-weight: bold;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.2s ease;
   }
   
-  .show {
-    display: flex;
+  .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
