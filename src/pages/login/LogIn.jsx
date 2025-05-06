@@ -1,8 +1,13 @@
 import styles from './LogIn.module.css';
-import IconContainer from '../../components/iconContainer/IconContainer';
+import ImageContainer from "../../components/imagecontainer/imagecontainer";
 
-function LogIn() {
-  return <h1 className={styles.title}>LogIn</h1>;
+function Login() {
+  return (
+    <main>
+      <ImageContainer imgPath="/path/to/your/image.jpg" />
+      {/* Aquí va tu formulario de login */}
+    </main>
+  );
 }
 
-export default LogIn;
+export default Login;
