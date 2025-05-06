@@ -8,8 +8,10 @@ import Profile from './pages/profile/Profile';
 import LogIn from './pages/login/LogIn';
 import MyEvents from './pages/myevents/MyEvents';
 import MyTickets from './pages/mytickets/MyTickets';
-import SubscribeEvent from './pages/subscribeevent/SubscribeeEvent.jsx';
+import SubscribeEvent from './pages/subscribeevent/SubscribeEvent.jsx';
 import UpdateEvent from './pages/updateevent /UpdateEvent .jsx';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
   return (
     <div>

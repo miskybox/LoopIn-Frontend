@@ -1,0 +1,53 @@
+div.formLogin {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    height: auto;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+   }
+     
+   form {
+    display: block;
+    background-color: #202027;
+    padding: 5% 5% 5% 5%;
+    border-radius: 5%;
+    width:50%;
+    height:50%;
+    margin: 0;
+    align-items: center;    
+   }
+   
+   
+   form label {
+    font-size: 100%;
+    text-align: left;
+    display: block; 
+    margin: 0;
+    color: white;
+    margin-bottom: 0.5vh;
+    padding: 0 0 0 5px;
+   }
+   
+   
+   input {
+    height: 2.5vh;
+    border-radius: 5px;
+    width: 95%;
+    padding: 5px;
+    margin-bottom: 2vh;
+    border: 1px solid #2E3852;
+    background-color: transparent;
+    color: white;
+}
+
+
+input:focus {
+ border-color: #596da0;
+ outline: none;
+ box-shadow: 0 0 5px #596da0;
+}
+
+   
