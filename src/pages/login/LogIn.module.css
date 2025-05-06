@@ -5,10 +5,8 @@ main {
     justify-content: center;
     height: 100%;
     width: 100%;
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin: 0;
+    padding: 0;
     background-color: #ffffff;
   }
   
@@ -54,9 +52,6 @@ section .imgcont {
     transition: background-color 0.3s ease-in-out;
   }
   
-  .buttonlogin:hover {
-    background-color: #ff1493; /* rosa intenso */
-  }
 
 
 h3 {
