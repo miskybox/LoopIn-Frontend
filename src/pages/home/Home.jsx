@@ -1,18 +1,19 @@
+import { FaSearch } from "react-icons/fa";
 import EventCarousel from "../../components/eventCarousel/EventCarousel";
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/Header/Header";
 import styles from "./Home.module.css";
 
 
 function Home() {
   return (
-    <div className={styles.pageContainer}>
-      <Header />
-      <main className={styles.mainContent}>
-        <EventCarousel />
-        
-      </main>
-      <Footer />
+    <div >
+      <div style={{display: "flex", justifyContent: "center", alignItems: "center", gap: "1rem", padding: "0 2rem"}}>
+        <FaSearch style={{marginTop:"25px", width:"60px", marginRight:"-10px"}}/>
+        <input variation="search"/>
+      </div>
+    
+      <EventCarousel /> 
+      <div className={styles.homeContent}>
+      </div>
     </div>
   );
 }
