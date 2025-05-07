@@ -11,6 +11,7 @@ function Input({
   type = "text",
   showResults = false,
   items = [],
+  showIcon = true,
 }) {
   const filteredItems = items.filter((item) =>
     item.toLowerCase().includes(value.toLowerCase())
@@ -21,11 +22,13 @@ function Input({
       {label && <label className={styles.label}>{label}</label>}
 
       <div className={styles.inputWrapper}>
-        <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/61d432a72ff1dada2a8f96db060757b2443a3653?placeholderIfAbsent=true&apiKey=b846614d0ea04d12bdbfa651b1d58a0f"
-          alt="Icono de entrada"
-          className={styles.icon}
-        />
+      {showIcon && (
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/61d432a72ff1dada2a8f96db060757b2443a3653?placeholderIfAbsent=true&apiKey=b846614d0ea04d12bdbfa651b1d58a0f"
+            alt="Icono de entrada"
+            className={styles.icon}
+          />
+        )}
         <input
           type={type}
           value={value}
@@ -33,6 +36,7 @@ function Input({
           placeholder={placeholder}
           className={styles.input}
           aria-label={label || placeholder}
+         
         />
       </div>
 
