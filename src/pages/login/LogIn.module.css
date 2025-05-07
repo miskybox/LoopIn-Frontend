@@ -3,12 +3,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 0;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  
+  margin: 0;
   background-color: #ffffff;
 }
+
+
 
 .form {
   display: flex;
@@ -21,15 +23,6 @@
 }
 
 
-.welcome {
-  font-size: 1.5rem;
-  color: #000000;
-  font-weight: bold;
-  text-align: left;
-  font-family: 'Comic Sans MS', cursive, sans-serif;
-  margin: 1.5rem 0 1rem 0;
-  width: 100%;
-}
 
 .forgot {
   text-align: left;
@@ -37,6 +30,7 @@
   cursor: pointer;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0.75rem 0;
+  font-weight: bold;;
   font-size: 0.95rem;
   width: 100%;
 }
@@ -45,19 +39,32 @@
   color: #0096FF;
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
 }
 h1 {
   margin: 0;
-}
-h3 {
-  font-size: 1rem;
+  font-size: 3rem;
   color: #000000;
+  font-weight: bold;
   text-align: left;
   font-family: 'Comic Sans MS', cursive, sans-serif;
-  margin: 1.5rem 0 0.5rem 0;
+  margin: 0.5rem 1rem 1rem 0.5rem;
   width: 100%;
+  font-weight: bold;
+ padding-left: 2rem;
 }
+h3 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #71727A;
+  text-align: left;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin: 0;
+  width: 100%;
+  padding-left: 2rem;
+}
+
+
 
 .inputWrapper {
   position: relative;
@@ -100,25 +107,12 @@ h3 {
   color: #007BFF;
 }
 
-.buttonlogin {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  background-color: #ff69b4;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  margin-top: 1rem;
-}
 
-.buttonlogin:hover {
-  background-color: #ff1493;
-}
 
 .imglogin {
   width: 100%;
   height: auto;
+  max-height: 35vh;
   margin: 0;
   padding: 0;
   border: 0;
@@ -126,8 +120,32 @@ h3 {
 
 .icons {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin-bottom: 0.5rem;
  width: 80%;
+ gap: 1rem;
+ box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.4); 
+ padding-bottom: 1.5rem;
+ margin: 0 auto 0.5rem auto;
+
 }
+
+.iconscon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  }
+
+  .iconscon h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+  }
+
+  form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }

@@ -27,7 +27,8 @@ function LogIn() {
   const isPasswordEmpty = password === ""; 
 
   return (
-    <main className={styles.login}>
+    <div className={styles.login}>
+    
       <section > <ImageContainer imgPath={logo} className={styles.imglogin} />
         </section>
       <h1 className={styles.welcome}>¡Bienvenide!</h1>
@@ -65,6 +66,8 @@ function LogIn() {
 
       
       <h3 className={styles.forgot}>¿Olvidaste la contraseña?</h3>
+
+      <section className={styles.btn}>
       <Button className={styles.buttonlogin}>Login</Button>
       <h3>
         ¿No estás registrado?{" "}
@@ -72,15 +75,21 @@ function LogIn() {
           Regístrate ahora
         </span>
       </h3>
-      
-<section className={styles.icons} >
+      </section>
+<section className={styles.iconscon} >
+<h3>
+        O continuar con
+        
+      </h3>
+      <div className={styles.icons}>
 <IconContainer variation="google" />
   <IconContainer variation="apple" />
   <IconContainer variation="facebook" />
-
+  </div>
 </section>
-<ProductCard />
-    </main>
+
+    
+    </div>
   );
 }
 
