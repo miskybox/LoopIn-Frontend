@@ -8,7 +8,7 @@ function ProductCard({ id, image, name, rating }) {
     const navigate = useNavigate();
  
  
-    const product = { id, image, name, rating }; // Datos del producto incluyendo ID
+    const product = { id, image, name, rating }; 
  
  
     const handleLikeClick = (e) => {
@@ -16,7 +16,7 @@ function ProductCard({ id, image, name, rating }) {
         let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
  
  
-        // Verifica si el producto ya está guardado en favoritos por su ID
+        
         const isAlreadyFavorite = favorites.some(
             (fav) => fav.id === product.id
         );
