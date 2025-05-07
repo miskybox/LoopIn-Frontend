@@ -1,17 +1,17 @@
 import styles from './Button.module.css';
 
 
-const Button = ({ onClick, type = "button", variation = "primary", text }) => {
- return (
-   <button
-     className={`${styles.button} ${styles[variation]}`}
-     type={type}
-     onClick={onClick}
-   >
-     {text}
-   </button>
- );
+const handleLogin = () => {
+  
+  console.log('Login button clicked!');
 };
 
+function Button({ text = "Login", variation = "login", onClick }) {
+  return (
+    <button onClick={onClick} className={styles[variation]}>
+      {text}
+    </button>
+  );
+}
 
 export default Button;
