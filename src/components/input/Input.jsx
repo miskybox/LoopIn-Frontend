@@ -1,21 +1,18 @@
-
 import styles from "./Input.module.css";
-import { useState } from "react";
 
-
-const Input = ({ variation, type, onChange, placeHolder }) => {
-   const [inputValue, setInputValue] = useState("");
-
-
-   return (
-       <input
-           type={type}
-           onChange={onChange}
-           placeholder={placeHolder}
-           className={`${styles.input} ${styles[variation]}`}
-       />
-   );
+const Input = ({ label, value, onChange, placeholder }) => {
+  return (
+    <div className={styles.container}>
+      {label && <label className={styles.label}>{label}</label>}
+      <input
+        type="text"
+        className={styles.input}
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+      />
+    </div>
+  );
 };
-
 
 export default Input;
