@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import logo from "../../assets/Logo.png"; 
+import ProductCard from "../../components/productCard/ProductCard";
 
 function LogIn() {
   const [email, setEmail] = useState("");
@@ -71,28 +72,17 @@ function LogIn() {
           Regístrate ahora
         </span>
       </h3>
+      <h1 className={styles.title}>My Events</h1> 
 <section className={styles.icons} >
 <IconContainer variation="google" />
   <IconContainer variation="apple" />
   <IconContainer variation="facebook" />
 
 </section>
-     
+<ProductCard />
     </main>
   );
 }
 
 export default LogIn;
-
-
-/*<>
-<h1 className={styles.title}>My Events</h1> 
-<div style={{ display: "flex", gap: "1rem" }}>
-  <IconContainer variation="google" />
-  <IconContainer variation="facebook" />
-  <IconContainer variation="apple" />
-</div>
-  <ProductCard />
-</>
-*/
  
