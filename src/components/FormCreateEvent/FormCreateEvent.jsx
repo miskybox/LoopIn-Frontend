@@ -1,122 +1,90 @@
 import React, { useState } from 'react';
 import styles from './FormCreateEvent.module.css';
 
-function FormCreateEvent() {
-  const [formData, setFormData] = useState({
-    name: '',
-    date: '',
-    time: '',
-    location: '',
-    image: null,
-    categories: [],
-    description: ''
-  });
+const initialState = {
+  name: '',
+  date: '',
+  time: '',
+  location: '',
+  image: '',
+  modality: '',
+  description: '',
+  tags: []
+};
 
+const tagOptions = [
+  { label: 'Bebés', value: 'baby', icon: 'src/assets/Icons/baby.png' },
+  { label: 'Accesible sillas de ruedas', value: 'disabled', icon: 'src/assets/Icons/disabled.png' },
+  { label: 'Autismo-friendly', value: 'autism', icon: 'src/assets/Icons/autism.png' },
+  { label: 'Inclusivo LGTBIQ+', value: 'pride', icon: 'src/assets/Icons/pride.png' },
+  { label: 'Mayores', value: 'seniors', icon: 'src/assets/Icons/seniors.png' },
+  { label: 'Pet friendly', value: 'animals', icon: 'src/assets/Icons/animals.png' },
+];
+
+const FormCreateEvent = () => {
+  const [form, setForm] = useState(initialState);
   const [errors, setErrors] = useState({});
 
-  const forbiddenChars = /[<>\/]/;
-  const locationPattern = /^[a-zA-Z0-9ñÑçÇºª,\s]*$/;
+  const validate = (field, value) => {
+    let error = '';
 
-  const validateField = (name, value) => {
-    switch (name) {
+    switch (field) {
       case 'name':
-        if (value.length < 6 || value.length > 25 || forbiddenChars.test(value)) {
-          return 'Debe tener entre 6 y 25 caracteres y no incluir <, > ni /.';
+        if (!/^[^<>\/]{8,40}$/.test(value)) {
+          error = 'El nombre debe tener entre 8 y 40 caracteres y no contener <, > o /.';
         }
         break;
       case 'location':
-        if (!locationPattern.test(value)) {
-          return 'Solo se permiten letras, números, espacios y los símbolos º ª ñ ç ,';
+        if (!/^[^<>]{5,100}$/.test(value)) {
+          error = 'La ubicación debe tener entre 5 y 100 caracteres y no contener < o >.';
         }
         break;
       case 'description':
-        if (value.length < 35 || value.length > 400 || forbiddenChars.test(value)) {
-          return 'Debe tener entre 35 y 400 caracteres y no incluir <, > ni /.';
+        if (!/^[^<>\/]{25,500}$/.test(value)) {
+          error = 'La descripción debe tener entre 25 y 500 caracteres y no contener <, > o /.';
+        }
+        break;
+      case 'image':
+        if (value && !/\.(jpg|jpeg|png)$/i.test(value)) {
+          error = 'Solo se permiten imágenes .jpg, .jpeg o .png.';
         }
         break;
       default:
-        return '';
+        break;
     }
-    return '';
+
+    setErrors(prev => ({ ...prev, [field]: error }));
   };
 
-  const validateImage = (file) => {
-    if (file && !['image/jpeg', 'image/png', 'image/jpg'].includes(file.type)) {
-      return 'Solo se permiten imágenes JPG, JPEG o PNG.';
-    }
-    return '';
+  const handleChange = e => {
+    const { name, value, files } = e.target;
+    const newValue = name === 'image' ? files[0]?.name || '' : value;
+
+    setForm(prev => ({ ...prev, [name]: newValue }));
+    validate(name, newValue);
   };
 
-  const validateAll = () => {
-    const newErrors = {
-      name: validateField('name', formData.name),
-      location: validateField('location', formData.location),
-      description: validateField('description', formData.description),
-      image: validateImage(formData.image)
-    };
-
-    setErrors(newErrors);
-    return Object.values(newErrors).every(err => !err);
+  const handleModality = mode => {
+    setForm(prev => ({ ...prev, modality: mode }));
   };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-    setErrors(prev => ({ ...prev, [name]: validateField(name, value) }));
+  const toggleTag = tag => {
+    setForm(prev => ({
+      ...prev,
+      tags: prev.tags.includes(tag)
+        ? prev.tags.filter(t => t !== tag)
+        : [...prev.tags, tag],
+    }));
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setFormData(prev => ({ ...prev, image: file }));
-    setErrors(prev => ({ ...prev, image: validateImage(file) }));
-  };
-
-  const handleCategoryChange = (category) => {
-    setFormData(prev => {
-      const categories = prev.categories.includes(category)
-        ? prev.categories.filter(cat => cat !== category)
-        : [...prev.categories, category];
-      return { ...prev, categories };
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-    if (!validateAll()) return;
-
-    const eventData = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      if (key === 'categories') {
-        eventData.append(key, JSON.stringify(value));
-      } else {
-        eventData.append(key, value);
-      }
-    });
-
-    try {
-      const res = await fetch('http://localhost:3001/events', {
-        method: 'POST',
-        body: eventData
-      });
-
-      if (res.ok) {
-        alert('Evento creado correctamente');
-        setFormData({
-          name: '',
-          date: '',
-          time: '',
-          location: '',
-          image: null,
-          categories: [],
-          description: ''
-        });
-        setErrors({});
-      } else {
-        alert('Error al subir el evento');
-      }
-    } catch (err) {
-      alert('Error en la conexión con el servidor');
+    // Aquí iría el envío al backend
+    if (Object.values(errors).some(err => err)) {
+      alert('Por favor corrige los errores antes de enviar.');
+      return;
     }
+    console.log('Formulario enviado:', form);
   };
 
   return (
@@ -125,81 +93,95 @@ function FormCreateEvent() {
       <input
         type="text"
         name="name"
-        value={formData.name}
+        value={form.name}
         onChange={handleChange}
-        placeholder="Eventos"
-        required
+        className={errors.name ? styles.errorInput : ''}
       />
-      {errors.name && <p className={styles.error}>{errors.name}</p>}
+      {errors.name && <span className={styles.errorText}>{errors.name}</span>}
 
       <label>Fecha:</label>
       <input
         type="date"
         name="date"
-        value={formData.date}
+        value={form.date}
         onChange={handleChange}
-        required
       />
 
       <label>Hora:</label>
       <input
         type="time"
         name="time"
-        value={formData.time}
+        value={form.time}
         onChange={handleChange}
-        required
       />
 
       <label>Ubicación:</label>
       <input
         type="text"
         name="location"
-        value={formData.location}
+        value={form.location}
         onChange={handleChange}
-        placeholder="Madrid, España"
-        required
+        className={errors.location ? styles.errorInput : ''}
       />
-      {errors.location && <p className={styles.error}>{errors.location}</p>}
+      {errors.location && <span className={styles.errorText}>{errors.location}</span>}
 
       <label>Imagen del producto:</label>
       <input
         type="file"
-        accept="image/jpeg, image/png, image/jpg"
-        onChange={handleFileChange}
-        required
+        name="image"
+        accept=".jpg,.jpeg,.png"
+        onChange={handleChange}
+        className={errors.image ? styles.errorInput : ''}
       />
-      {errors.image && <p className={styles.error}>{errors.image}</p>}
+      {errors.image && <span className={styles.errorText}>{errors.image}</span>}
 
-      <label>Agrega las categorías que apliquen:</label>
-      <div className={styles.categories}>
-        <button
-          type="button"
-          className={formData.categories.includes('Online') ? styles.selected : ''}
-          onClick={() => handleCategoryChange('Online')}
-        >
-          Online
-        </button>
-        <button
-          type="button"
-          className={formData.categories.includes('Presencial') ? styles.selected : ''}
-          onClick={() => handleCategoryChange('Presencial')}
-        >
-          Presencial
-        </button>
-      </div>
+      <div className={styles.modalityContainer}>
+  <button
+    type="button"
+    className={`${styles.onlineButton} ${form.modality === 'online' ? styles.selectedOnline : ''}`}
+    onClick={() => handleModality('online')}
+  >
+    Online
+  </button>
+  <button
+    type="button"
+    className={`${styles.presencialButton} ${form.modality === 'presencial' ? styles.selectedPresencial : ''}`}
+    onClick={() => handleModality('presencial')}
+  >
+    Presencial
+  </button>
+</div>
+
+<label>Selecciona etiquetas adicionales:</label>
+<div className={styles.tagContainer}>
+  {tagOptions.map(tag => (
+    <button
+      key={tag.value}
+      type="button"
+      className={`${styles.tagButton} ${form.tags.includes(tag.value) ? styles.selectedTag : ''}`}
+      onClick={() => toggleTag(tag.value)}
+      aria-pressed={form.tags.includes(tag.value)}
+      aria-label={tag.label}
+    >
+      <img src={tag.icon} alt={tag.label} className={styles.icon} />
+    </button>
+  ))}
+</div>
 
       <label>Danos una breve descripción de tu evento:</label>
       <textarea
         name="description"
-        value={formData.description}
+        value={form.description}
         onChange={handleChange}
-        required
+        className={errors.description ? styles.errorInput : ''}
       />
-      {errors.description && <p className={styles.error}>{errors.description}</p>}
+      {errors.description && <span className={styles.errorText}>{errors.description}</span>}
 
-      <button type="submit" className={styles.submit}>Subir evento</button>
+      <button type="submit" className={styles.submitButton}>
+        Subir evento
+      </button>
     </form>
   );
-}
+};
 
 export default FormCreateEvent;
