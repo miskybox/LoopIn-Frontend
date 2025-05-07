@@ -1,15 +1,13 @@
-import { FaHeart, FaHome, FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
-import { IoHeartCircleOutline } from "react-icons/io5";
+import { FaGoogle, FaApple, FaFacebook } from "react-icons/fa";
 import styles from './IconContainer.module.css';
 
 
 const icons = {
- home: FaHome,
- favorites: IoHeartCircleOutline,
- google: FaGoogle,
- apple: FaApple,
- facebook: FaFacebook,
- like: FaHeart
+
+    google: FaGoogle,
+    apple: FaApple,
+    facebook: FaFacebook,
+ 
 };
 
 

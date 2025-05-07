@@ -10,9 +10,6 @@ function MyEvents() {
         <IconContainer variation="google" />
         <IconContainer variation="facebook" />
         <IconContainer variation="apple" />
-        <IconContainer variation="favorites" />
-        <IconContainer variation="home" />
-        <IconContainer variation="like" />
       </div>
         <ProductCard />
     </>

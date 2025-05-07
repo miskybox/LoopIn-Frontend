@@ -1,0 +1,23 @@
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 0.5rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+  
+.icon {
+    width: 40px;
+    height: 40px;
+}
+  
+.active {
+    background-color: #e0f7fa;
+    transform: scale(1.1);
+}
+  
+.inactive {
+    opacity: 0.4;
+}
+  

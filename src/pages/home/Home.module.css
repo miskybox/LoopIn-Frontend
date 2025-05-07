@@ -1,15 +1,49 @@
+/* Home.module.css */
 .pageContainer {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden; 
-}
-.mainContent {
-  flex: 1;
-  padding: 16px;
+  overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  background-color: #f4f4f9;
 }
 
-.title {
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+  color: #1d3557;
+  margin-left: 10px;
+}
+
+.homeContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.homeTitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #1D0739;
   text-align: center;
-  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.homeDescription {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #C151F2; 
 }
