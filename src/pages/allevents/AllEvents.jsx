@@ -1,6 +1,6 @@
 import styles from './AllEvents.module.css';
 import React from 'react';
-import ContainerEventDetails from '../../components/ContainerEventDetails.jsx';
+import ContainerEventDetails from "../../components/containereventdetails/ContainerEventDetails.jsx";
 
 
 function AllEvents() {

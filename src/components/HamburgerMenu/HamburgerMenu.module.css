@@ -49,4 +49,70 @@
   .menu a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  
+  /* Estilos para el botón Cerrar Sesión */
+.logoutButton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos para la ventana modal de confirmación */
+.confirmationModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1D0739;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 20;
+  text-align: center;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.confirmButton {
+  background-color: #CCC1F7;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.confirmButton:hover {
+  background-color: #B79DF0; 
+  box-shadow: 0px 4px 8px rgba(183, 157, 240, 0.3); 
+  transform: scale(1.05); 
+}
+.cancelButton {
+  background-color: #25356F;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cancelButton:hover {
+  background-color: #1A2A55; 
+  box-shadow: 0px 4px 8px rgba(26, 42, 85, 0.3); 
+  transform: scale(1.05); 
+}
+
