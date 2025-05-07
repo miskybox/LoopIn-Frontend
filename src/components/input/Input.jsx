@@ -12,6 +12,7 @@ function Input({
   showResults = false,
   items = [],
   showIcon = true,
+  name,
 }) {
   const filteredItems = items.filter((item) =>
     item.toLowerCase().includes(value.toLowerCase())
@@ -31,6 +32,7 @@ function Input({
         )}
         <input
           type={type}
+          name={name}    
           value={value}
           onChange={onChange}
           placeholder={placeholder}
