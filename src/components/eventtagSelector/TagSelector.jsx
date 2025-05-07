@@ -1,12 +1,12 @@
-import React from 'react';
-import TagButton from './TagButton';
-import styles from './TagSelector.module.css';
-import disabledIcon from '../../assets/icons/disabled.png';
-import babyIcon from '../../assets/icons/baby.png';
-import autismIcon from '../../assets/icons/autism.png';
-import prideIcon from '../../assets/icons/pride.png';
-import seniorsIcon from '../../assets/icons/seniors.png';
-import animalsIcon from '../../assets/icons/animals.png';
+import React from "react";
+import TagButton from "./TagButton";
+import styles from "./TagSelector.module.css";
+import disabledIcon from "../../assets/Icons/disabled.png";
+import babyIcon from "../../assets/Icons/baby.png";
+import autismIcon from "../../assets/Icons/autism.png";
+import prideIcon from "../../assets/Icons/pride.png";
+import seniorsIcon from "../../assets/Icons/seniors.png";
+import animalsIcon from "../../assets/Icons/animals.png";
 
 
 function TagSelector({ tags, setTags }) {

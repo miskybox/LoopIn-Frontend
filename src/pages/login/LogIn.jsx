@@ -72,7 +72,7 @@ function LogIn() {
           Regístrate ahora
         </span>
       </h3>
-      <h1 className={styles.title}>My Events</h1> 
+      
 <section className={styles.icons} >
 <IconContainer variation="google" />
   <IconContainer variation="apple" />
