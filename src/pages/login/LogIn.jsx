@@ -11,3 +11,15 @@ function Login() {
 }
 
 export default Login;
+
+
+/*<>
+<h1 className={styles.title}>My Events</h1> 
+<div style={{ display: "flex", gap: "1rem" }}>
+  <IconContainer variation="google" />
+  <IconContainer variation="facebook" />
+  <IconContainer variation="apple" />
+</div>
+  <ProductCard />
+</>
+*/
