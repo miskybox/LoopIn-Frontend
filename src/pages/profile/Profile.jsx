@@ -1,7 +1,14 @@
 import styles from './Profile.module.css';
+import React from 'react';
+import FormProfile from '../../components/FormProfile/FormProfile.jsx';
 
 function Profile() {
-  return <h1 className={styles.title}>profile</h1>; 
+  return (
+    <div>
+      <h1 className={styles.title}>profile</h1>
+      <FormProfile />
+    </div>
+  );
 }
 
 export default Profile;
