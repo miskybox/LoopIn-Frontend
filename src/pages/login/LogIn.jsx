@@ -27,10 +27,11 @@ function LogIn() {
 
   return (
     <main className={styles.login}>
-      <ImageContainer imgPath={logo} className={styles.imglogin} />
+      <section > <ImageContainer imgPath={logo} className={styles.imglogin} />
+        </section>
       <h1 className={styles.welcome}>¡Bienvenide!</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
-        <Input
+      <div className={styles.inputWrapper}><Input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -38,6 +39,7 @@ function LogIn() {
           showIcon={false} 
         />
         {}
+        </div>
         <div className={styles.passwordWrapper}>
           <Input
             type={passwordVisible ? "text" : "password"} 
@@ -57,20 +59,25 @@ function LogIn() {
           </div>
         </div>
 
-        <Button className={styles.buttonlogin}>Login</Button>
+        
       </form>
 
       
       <h3 className={styles.forgot}>¿Olvidaste la contraseña?</h3>
-
+      <Button className={styles.buttonlogin}>Login</Button>
       <h3>
         ¿No estás registrado?{" "}
         <span className={styles.reglink}>
           Regístrate ahora
         </span>
       </h3>
+<section className={styles.icons} >
+<IconContainer variation="google" />
+  <IconContainer variation="apple" />
+  <IconContainer variation="facebook" />
 
-      <IconContainer className={styles.iconlogin}/>
+</section>
+     
     </main>
   );
 }
