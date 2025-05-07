@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './SubscribeEvent.module.css';
-import prideIcon from '../../assets/icons/pride.png';
-import babyIcon from '../../assets/icons/baby.png';
+import prideIcon from '../../assets/Icons/pride.png';
+import babyIcon from '../../assets/Icons/baby.png';
 
 function SubscribeEvent() {
   const [event, setEvent] = useState(null);
