@@ -1,10 +1,10 @@
-
-/* Contenedor general del input */
 .container {
+  display: flex;
+  flex-direction: column;
   color: #000;
   background-color: #ede8f7;
   border: 1px solid #d9d9d9;
-  width: 97%; /* ocupa todo el ancho del padre */
+  width: 97%; 
   font-family: 'Inter', -apple-system, Roboto, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -14,14 +14,14 @@
  margin-inline:6px;
 }
 
-/* Etiqueta (label) */
+
 .label {
   font-weight: bold;
-  margin-bottom: 6px;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
-/* Contenedor del input y el icono */
+
 .inputWrapper {
   background-color: #ede8f7;
   border: 1px solid #ede8f7;
@@ -32,7 +32,6 @@
   width: 100%;
 }
 
-/* Icono dentro del input */
 .icon {
   width: 20px;
   height: 20px;
@@ -40,7 +39,7 @@
   object-fit: contain;
 }
 
-/* Estilo del input */
+
 .input {
   flex-grow: 1;
   border: none;
@@ -51,3 +50,6 @@
   outline: none;
   color: #000;
 }
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.34)};
