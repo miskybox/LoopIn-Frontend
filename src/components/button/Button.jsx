@@ -6,12 +6,23 @@ const handleLogin = () => {
   console.log('Login button clicked!');
 };
 
-function Button({ text = "Login", variation = "login", onClick }) {
+function Button({ children, type = "button", variation = "login", onClick  }) {
   return (
-    <button onClick={onClick} className={styles[variation]}>
-      {text}
-    </button>
+   
+    <button
+    type={type}
+    onClick={onClick}
+    className={`${styles.button} ${styles[variation]}`}
+  >
+    {children}
+  </button>
+
+   
   );
 }
 
 export default Button;
+
+
+
+
