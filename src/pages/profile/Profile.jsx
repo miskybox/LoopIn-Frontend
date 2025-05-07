@@ -5,7 +5,7 @@ import FormProfile from '../../components/FormProfile/FormProfile.jsx';
 function Profile() {
   return (
     <div>
-      <h1 className={styles.title}>profile</h1>
+      <h1 className={styles.title}></h1>
       <FormProfile />
     </div>
   );
