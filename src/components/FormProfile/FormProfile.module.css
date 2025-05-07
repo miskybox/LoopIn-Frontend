@@ -1,0 +1,115 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 0.95rem;
+  }
+  
+  .input {
+    background-color: #ede8f7;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    margin-top: 0.4rem;
+  }
+  
+  .button {
+    background-color: #90bbf3;
+    color: black;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #76a9ec;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+  
+  /* Estilos para el modal */
+  .modalContent {
+    text-align: center;
+  }
+  
+  .modalButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .modalButtonYes {
+    background-color: #ccc1f7;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .modalButtonNo {
+    background-color: #25356f;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  .profileImageWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .profileImage {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .imageInput {
+    font-size: 0.9rem;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+    background-color: #ede8f7;
+    border: none;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .passwordWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .passwordToggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
