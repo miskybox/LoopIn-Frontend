@@ -28,7 +28,7 @@ function App() {
         <Route path="myevents" element={<MyEvents/>} />
         <Route path="mytickets" element={<MyTickets/>} />
         <Route path="subscribeevent" element={<SubscribeEvent/>} />
-        <Route path="/updateevent/:id" element={<UpdateEvent/>} />
+        <Route path="/updateevent" element={<UpdateEvent/>} />
         </Routes>     
     </main>
     <Footer/>

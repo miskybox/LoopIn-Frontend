@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './EventTagButton.module.css';
+import styles from './TagButton.module.css';
 
-function EventTagButton({ icon, label, active, onToggle }) {
+function TagButton({ icon, label, active, onToggle }) {
   return (
     <button
       type="button"
@@ -14,4 +14,4 @@ function EventTagButton({ icon, label, active, onToggle }) {
   );
 }
 
-export default EventTagButton;
+export default TagButton;
