@@ -1,9 +1,102 @@
-.title {
-    font-size: 3rem;
-    color: #ff69b4; /* rosa fuerte */
-    font-weight: bold;
-    text-align: center;
-    animation: pop 1.5s ease-in-out infinite alternate;
-    text-shadow: 2px 2px 5px rgba(255, 105, 180, 0.5);
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-  }
+.container {
+  padding: 1rem;
+  font-family: sans-serif;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card {
+  background-color: #f4edff;
+  border-radius: 20px;
+  overflow: visible;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.image {
+  height: 180px;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.infoBox {
+  background-color: white;
+  border: 2px solid #a259ff;
+  border-radius: 16px;
+  width: 85%;
+  margin: -40px auto 0;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.infoBox h3 {
+  margin: 0 0 0.5rem;
+}
+
+.tags {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tags img {
+  width: 24px;
+  height: 24px;
+}
+
+.description {
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+
+.capacity {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact,
+.subscribe {
+  flex: 1;
+  padding: 0.8rem;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 0 0.25rem;
+}
+
+.contact {
+  background-color: #e6d4ff;
+  color: #000;
+}
+
+.subscribe {
+  background-color: #2e265f;
+  color: #fff;
+}
