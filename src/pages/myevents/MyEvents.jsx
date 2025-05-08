@@ -46,7 +46,7 @@ function MyEvents() {
                 {event.tags.includes('lgbt') && (
                   <img src="/src/assets/icons/pride.png" alt="LGBT friendly" />
                 )}
-                {/* Aquí puedes ir sumando más condiciones si hay más tags */}
+                
               </div>
             </div>
           </div>

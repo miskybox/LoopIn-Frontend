@@ -79,7 +79,7 @@ const FormCreateEvent = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // Aquí iría el envío al backend
+   
     if (Object.values(errors).some(err => err)) {
       alert('Por favor corrige los errores antes de enviar.');
       return;

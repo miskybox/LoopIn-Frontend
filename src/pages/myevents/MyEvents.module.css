@@ -1,6 +1,6 @@
 .title {
     font-size: 3rem;
-    color: #ff69b4; /* rosa fuerte */
+    color: #ff69b4; 
     font-weight: bold;
     text-align: center;
     animation: pop 1.5s ease-in-out infinite alternate;

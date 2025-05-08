@@ -52,7 +52,7 @@ const PerfilForm = () => {
 
   const handleModalConfirm = (action) => {
     if (action === "yes") {
-      // Lógica para guardar los cambios integrar con  lógica de backend 
+
       alert("Datos guardados con éxito");
     }
     setShowModal(false);
@@ -117,7 +117,7 @@ const PerfilForm = () => {
       )}
 
       <form className={styles.form} onSubmit={handleSubmit}>
-        {/* Imagen de perfil */}
+    
         <div className={styles.profileImageWrapper}>
           {isImageSelected && formData.imagen && (
             <img
@@ -166,7 +166,7 @@ const PerfilForm = () => {
         </div>
         {errors.password && <div className={styles.error}>{errors.password}</div>}
 
-        {/* Input para subir imagen */}
+       
         <input
           type="file"
           accept="image/*"
