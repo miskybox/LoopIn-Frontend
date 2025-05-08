@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import Modal from "../../components/Modal/Modal.jsx";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 import styles from "./FormProfile.module.css"; 
+import api from '../../services/api';
+
+
 const PerfilForm = () => {
   const [formData, setFormData] = useState({
     nombre: "",
@@ -16,6 +19,19 @@ const PerfilForm = () => {
     password: "",
   });
 
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await api.get('/users/me');
+        setProfileData(response.data);
+      } catch (error) {
+        console.error('Error al cargar perfil:', error);
+      }
+    };
+  
+    fetchProfile();
+  }, []);
+  
   const [showModal, setShowModal] = useState(false);
   const [isImageSelected, setIsImageSelected] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -117,7 +133,7 @@ const PerfilForm = () => {
       )}
 
       <form className={styles.form} onSubmit={handleSubmit}>
-    
+        
         <div className={styles.profileImageWrapper}>
           {isImageSelected && formData.imagen && (
             <img
@@ -166,6 +182,7 @@ const PerfilForm = () => {
         </div>
         {errors.password && <div className={styles.error}>{errors.password}</div>}
 
+        
        
         <input
           type="file"

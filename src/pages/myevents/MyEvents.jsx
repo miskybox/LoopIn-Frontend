@@ -1,27 +1,36 @@
 import styles from './MyEvents.module.css';
 import React, { useEffect, useState } from 'react';
-
+import api from '../../services/api';
 
 function MyEvents() {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    
-    const mockEvents = [
-      {
-        id: 1,
-        title: 'Hackathon: Inteligencia Artificial',
-        organizer: 'Techinnovators',
-        date: '2025-06-15',
-        time: '09:00 - 18:00',
-        format: 'Online',
-        imageUrl: '', 
-        tags: ['lgbt']
-      },
-     
-    ];
+    const fetchMyEvents = async () => {
+      try {
+        const response = await api.get('/events/mine');
+        setEvents(response.data); 
+      } catch (error) {
+        console.error('Error al cargar mis eventos:', error);
 
-    setEvents(mockEvents);
+       
+        const mockEvents = [
+          {
+            id: 1,
+            title: 'Hackathon: Inteligencia Artificial',
+            organizer: 'Techinnovators',
+            date: '2025-06-15',
+            time: '09:00 - 18:00',
+            format: 'Online',
+            imageUrl: '',
+            tags: ['lgbt']
+          },
+        ];
+        setEvents(mockEvents);
+      }
+    };
+
+    fetchMyEvents();
   }, []);
 
   return (
@@ -46,7 +55,6 @@ function MyEvents() {
                 {event.tags.includes('lgbt') && (
                   <img src="/src/assets/icons/pride.png" alt="LGBT friendly" />
                 )}
-                
               </div>
             </div>
           </div>
@@ -57,4 +65,3 @@ function MyEvents() {
 }
 
 export default MyEvents;
-

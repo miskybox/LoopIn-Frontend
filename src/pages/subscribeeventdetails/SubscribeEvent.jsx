@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import styles from './SubscribeEvent.module.css';
 import prideIcon from '../../assets/Icons/pride.png';
 import babyIcon from '../../assets/Icons/baby.png';
+import api from '../../services/api';
+import { useParams } from 'react-router-dom';
 
 function SubscribeEvent() {
   const [event, setEvent] = useState(null);
@@ -22,6 +24,19 @@ function SubscribeEvent() {
 
     setEvent(eventData);
   }, []);
+  const { id } = useParams();
+
+  const handleSubscribe = async () => {
+    try {
+     const response = await api.post(`/events/${id}/subscribe`, {
+        userId: 123 
+      });
+      alert('¡Inscripción exitosa!');
+      } catch (error) {
+        alert('Error al inscribirse 😢');
+        console.error(error);
+      }
+  };
 
   if (!event) return <p>Cargando...</p>;
 
@@ -66,3 +81,6 @@ function SubscribeEvent() {
 }
 
 export default SubscribeEvent;
+
+
+
