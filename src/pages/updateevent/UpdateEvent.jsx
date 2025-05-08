@@ -34,10 +34,22 @@ function UpdateEvent() {
         description: 'Descripción del evento...',
         date: '2025-05-10',
         location: 'Barcelona',
-        imageUrl: '' // o pon una imagen de prueba si quieres
+        imageUrl: '' 
       };
       setFormData(existingData);
     };
+    const fetchEvent = async () => {
+      try {
+        const response = await api.get(`/events/${id}`);
+        setFormData(response.data);
+        setTags(response.data.tags || {}); 
+      } catch (error) {
+        console.error('Error al cargar evento:', error);
+      }
+    };
+  
+    fetchEvent();
+
 
     fetchEventData();
   }, [id]);
@@ -47,17 +59,20 @@ function UpdateEvent() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Datos actualizados:', formData);
-    console.log('Etiquetas:', tags);
-  };
-
+    try {
+      await api.put(`/events/${id}`, { ...formData, tags });
+      alert('Evento actualizado correctamente.');
+    } catch (error) {
+      console.error('Error al actualizar:', error);
+    }
+  }
   const handleDelete = () => {
     const confirmed = window.confirm('¿Seguro que quieres eliminar este evento?');
     if (confirmed) {
       console.log('Evento eliminado');
-      // Aquí iría tu lógica de borrado
+     
     }
   };
 
@@ -109,7 +124,7 @@ function UpdateEvent() {
           />
         </label>
 
-        {/* 🔽 Aquí va el selector de etiquetas */}
+        
         <EventTagSelector tags={tags} setTags={setTags} />
 
         <div className={styles.buttonGroup}>
@@ -122,3 +137,5 @@ function UpdateEvent() {
 }
 
 export default UpdateEvent;
+
+
